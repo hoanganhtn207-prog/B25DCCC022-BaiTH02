@@ -1,0 +1,54 @@
+.app { min-height: 100vh; padding: 16px; font-family: system-ui, sans-serif;
+       color: #1a1a2e; background: #e8f0fe; transition: background .4s; }
+.theme-clear  { background: linear-gradient(#ffe9a8, #bfe3ff); }
+.theme-cloudy { background: linear-gradient(#d7dde4, #b8c2cc); }
+.theme-rain   { background: linear-gradient(#a9bdd1, #7d93a8); }
+.theme-storm  { background: linear-gradient(#8c8fa6, #5b5f7a); }
+.theme-fog    { background: linear-gradient(#e3e6e8, #c4c9cc); }
+.theme-snow   { background: linear-gradient(#f4f8ff, #cfdcf0); }
+
+.header { display: flex; justify-content: space-between; align-items: center;
+          max-width: 1000px; margin: 0 auto 16px; }
+.header h1 { font-size: 1.3rem; margin: 0; }
+
+/* Mặc định (< 768px): xếp dọc */
+.layout { display: flex; flex-direction: column; gap: 16px; max-width: 1000px; margin: 0 auto; }
+
+/* >= 768px: 2 cột */
+@media (min-width: 768px) {
+  .layout { display: grid; grid-template-columns: 260px 1fr; align-items: start; }
+}
+
+.sidebar, .card { background: rgba(255,255,255,.85); border-radius: 12px; padding: 16px; }
+.card { margin-bottom: 16px; }
+.search { width: 100%; padding: 8px 10px; margin-bottom: 10px;
+          border: 1px solid #ccd; border-radius: 8px; }
+
+.city-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.city-list li { display: flex; gap: 6px; }
+.city-item { flex: 1; text-align: left; padding: 10px 12px; border: 1px solid #ccd;
+             border-radius: 8px; background: #fff; cursor: pointer; }
+.city-item:hover { background: #f0f4ff; }
+.city-item.active { background: #2563eb; color: #fff; border-color: #2563eb; font-weight: 600; }
+.fav-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #f59e0b; }
+
+.current-main { display: flex; align-items: center; gap: 16px; }
+.icon-lg { font-size: 4rem; }
+.temp-lg { font-size: 2.6rem; font-weight: 700; }
+.metrics { list-style: none; padding: 0; display: grid; gap: 6px; }
+
+.forecast { list-style: none; padding: 0; margin: 0; }
+.forecast-item { display: grid; grid-template-columns: 1fr 48px auto; align-items: center;
+                 padding: 8px 0; border-bottom: 1px solid #e3e6ee; }
+.fc-day { display: flex; flex-direction: column; }
+.fc-icon { font-size: 1.6rem; text-align: center; }
+.fc-temp { display: flex; gap: 10px; }
+.fc-temp .max { font-weight: 700; }
+.fc-temp .min { color: #6b7280; }
+
+.status { text-align: center; padding: 40px 16px; }
+.status.error { color: #b91c1c; }
+.status button, .unit-toggle button { padding: 6px 14px; border: 1px solid #2563eb;
+  background: #fff; border-radius: 8px; cursor: pointer; }
+.unit-toggle { display: flex; gap: 4px; }
+.unit-toggle button.active { background: #2563eb; color: #fff; }
